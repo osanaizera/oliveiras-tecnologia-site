@@ -72,18 +72,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Oliveiras Tecnologia offers industrial engineering and transformation solutions for modernizing operations." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Oliveiras Tecnologia offers industrial engineering and transformation solutions for modernizing operations." },
+      { title: "Oliveiras Tecnologia — Engenharia e Transformacao Industrial" },
+      { name: "description", content: "Parceiros estrategicos em engenharia industrial: automacao, manutencao inteligente e software para a Industria 4.0 e 5.0. Regiao de Hortolandia, SP." },
+      { name: "author", content: "Oliveiras Tecnologia" },
+      { property: "og:title", content: "Oliveiras Tecnologia — Engenharia e Transformacao Industrial" },
+      { property: "og:description", content: "Solucoes de engenharia, automacao e software industrial sob medida para a Industria 4.0 e 5.0." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Oliveiras Tecnologia offers industrial engineering and transformation solutions for modernizing operations." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b045f9bd-f9c5-4f26-99f3-7ec8f67ec40f/id-preview-e2d2c720--aa3aae35-bd80-40bc-ae5e-c160ee9cdb01.lovable.app-1778249864241.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b045f9bd-f9c5-4f26-99f3-7ec8f67ec40f/id-preview-e2d2c720--aa3aae35-bd80-40bc-ae5e-c160ee9cdb01.lovable.app-1778249864241.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Oliveiras Tecnologia — Transformacao Industrial" },
+      { name: "twitter:description", content: "Solucoes de engenharia, automacao e software industrial sob medida para a Industria 4.0 e 5.0." },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#1a4a2e" },
     ],
     links: [
       {
@@ -100,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>

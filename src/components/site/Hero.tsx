@@ -6,7 +6,8 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-primary-deep text-primary-foreground pt-32 pb-28 md:pt-40 md:pb-36"
+      className="relative overflow-hidden bg-primary-deep text-primary-foreground pt-24 pb-20 md:pt-28 md:pb-24"
+      style={{ minHeight: "520px", maxHeight: "880px" }}
     >
       {/* Background image */}
       <div
@@ -43,7 +44,7 @@ export function Hero() {
             Engenharia · Indústria 4.0 / 5.0
           </span>
 
-          <h1 className="mt-7 font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight">
+          <h1 className="mt-7 font-display font-bold leading-[0.98] tracking-tight" style={{ fontSize: "clamp(2.6rem, 3.4vw, 4.6rem)" }}>
             A próxima geração da{" "}
             <span className="text-gradient-teal">transformação industrial</span>
             <span className="text-teal animate-blink">_</span>
