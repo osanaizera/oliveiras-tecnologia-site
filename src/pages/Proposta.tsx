@@ -126,6 +126,18 @@ export default function Proposta() {
     document.title = "Proposta Comercial — Oliveiras Tecnologia";
     const metaRobots = document.querySelector('meta[name="robots"]');
     if (metaRobots) metaRobots.setAttribute("content", "noindex, nofollow");
+
+    // SalesDrive proposal telemetry
+    (window as any).__SD_SITE_ID__ = "3985I_CqjrfE";
+    const telemetryScript = document.createElement("script");
+    telemetryScript.src = "https://cms.draivv.com/proposal-telemetry.js";
+    telemetryScript.defer = true;
+    document.head.appendChild(telemetryScript);
+
+    return () => {
+      telemetryScript.remove();
+      delete (window as any).__SD_SITE_ID__;
+    };
   }, []);
 
   return (
@@ -150,7 +162,7 @@ export default function Proposta() {
 
       <main>
         {/* Hero da proposta */}
-        <section className="relative overflow-hidden bg-primary-deep text-primary-foreground pt-28 pb-20">
+        <section data-sd-section="hero" className="relative overflow-hidden bg-primary-deep text-primary-foreground pt-28 pb-20">
           <div className="absolute inset-0 grid-bg-animated radial-fade opacity-40" />
           <div className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-teal/15 blur-3xl animate-pulse-glow" />
           <div className="absolute inset-0 noise opacity-[0.04] mix-blend-overlay pointer-events-none" />
@@ -181,7 +193,7 @@ export default function Proposta() {
         </section>
 
         {/* Problema / Contexto */}
-        <section className="py-20 bg-surface-tint">
+        <section data-sd-section="cenario-atual" className="py-20 bg-surface-tint">
           <div className="mx-auto max-w-4xl px-6">
             <Reveal>
               <div className="rounded-2xl border border-border bg-card p-8 md:p-12 shadow-card">
@@ -216,7 +228,7 @@ export default function Proposta() {
         </section>
 
         {/* O que esta incluso — Setup */}
-        <section className="py-20 bg-background">
+        <section data-sd-section="implementacao" className="py-20 bg-background">
           <div className="mx-auto max-w-7xl px-6">
             <Reveal>
               <div className="text-center max-w-2xl mx-auto">
@@ -260,7 +272,7 @@ export default function Proposta() {
         </section>
 
         {/* Recorrencia Mensal */}
-        <section className="py-20 bg-surface-tint">
+        <section data-sd-section="acompanhamento-mensal" className="py-20 bg-surface-tint">
           <div className="mx-auto max-w-7xl px-6">
             <Reveal>
               <div className="text-center max-w-2xl mx-auto">
@@ -298,7 +310,7 @@ export default function Proposta() {
         </section>
 
         {/* Beneficios */}
-        <section className="py-20 bg-background">
+        <section data-sd-section="resultados" className="py-20 bg-background">
           <div className="mx-auto max-w-7xl px-6">
             <Reveal>
               <div className="text-center max-w-2xl mx-auto">
@@ -332,7 +344,7 @@ export default function Proposta() {
         </section>
 
         {/* Pricing */}
-        <section className="py-20 bg-primary-deep text-primary-foreground relative overflow-hidden">
+        <section data-sd-section="precos" className="py-20 bg-primary-deep text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 grid-bg radial-fade opacity-30" />
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-teal/15 blur-3xl rounded-full" />
 
@@ -431,7 +443,7 @@ export default function Proposta() {
         </section>
 
         {/* Processo de trabalho */}
-        <section className="py-20 bg-background">
+        <section data-sd-section="processo" className="py-20 bg-background">
           <div className="mx-auto max-w-4xl px-6">
             <Reveal>
               <div className="text-center max-w-2xl mx-auto">
@@ -491,7 +503,7 @@ export default function Proposta() {
         </section>
 
         {/* CTA Final */}
-        <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+        <section data-sd-section="cta-final" className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
           <div className="absolute inset-0 grid-bg radial-fade opacity-40" />
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-teal/20 blur-3xl rounded-full" />
           <Reveal>
