@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import {
   ArrowRight,
   Check,
@@ -18,27 +19,6 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
-
-export const Route = createFileRoute("/proposta")({
-  head: () => ({
-    meta: [
-      { title: "Proposta Comercial — Oliveiras Tecnologia" },
-      {
-        name: "description",
-        content:
-          "Proposta de implementacao de site otimizado + SEO/GEO + geracao de conteudo e manutencao mensal para a Oliveiras Tecnologia.",
-      },
-      { name: "robots", content: "noindex, nofollow" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
-      },
-    ],
-  }),
-  component: Proposta,
-});
 
 const deliverables = [
   {
@@ -141,7 +121,13 @@ const benefits = [
   },
 ];
 
-function Proposta() {
+export default function Proposta() {
+  useEffect(() => {
+    document.title = "Proposta Comercial — Oliveiras Tecnologia";
+    const metaRobots = document.querySelector('meta[name="robots"]');
+    if (metaRobots) metaRobots.setAttribute("content", "noindex, nofollow");
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navbar simplificada */}
@@ -541,7 +527,7 @@ function Proposta() {
         </section>
       </main>
 
-      {/* Footer simplificado */}
+      {/* Footer com SalesDrive */}
       <footer className="bg-primary-deep text-primary-foreground">
         <div className="mx-auto max-w-7xl px-6 py-8 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
@@ -551,7 +537,15 @@ function Proposta() {
             <span className="font-display font-bold text-sm">Oliveiras Tecnologia</span>
           </div>
           <span className="text-xs text-white/50">
-            Documento confidencial · Proposta comercial exclusiva
+            Proposta elaborada por{" "}
+            <a
+              href="https://salesdrive.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal hover:text-white transition-colors font-medium"
+            >
+              salesdrive.tech
+            </a>
           </span>
         </div>
       </footer>
